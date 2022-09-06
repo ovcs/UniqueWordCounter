@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/UniqueWordCounter/src/io/Fb2.cs
+/UniqueWordCounter/src/io/Txt.cs
+/UniqueWordCounter/src/srv/Adder.cs
+/UniqueWordCounter/src/srv/Counter.cs
+/UniqueWordCounter/src/srv/TextHandler.cs
+/UniqueWordCounter/src/view/IContent.cs
