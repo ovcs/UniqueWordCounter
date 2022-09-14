@@ -381,3 +381,4 @@ FodyWeavers.xsd
 /UniqueWordCounter/Service/WordCounter.cs
 /UniqueWordCounter/Program.cs
 /UniqueWordCounter/Models/Word.cs
+/UniqueWordCounter/View/ConsoleView.cs

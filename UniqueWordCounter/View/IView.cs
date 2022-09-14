@@ -2,7 +2,7 @@
 {
     internal interface IView
     {
-        public void ConsoleScenario(int cscode);
         public void Report(int rcode);
+        public void ShowMessage(string cscode);
     }
 }
