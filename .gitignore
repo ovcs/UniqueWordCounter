@@ -367,3 +367,17 @@ FodyWeavers.xsd
 /UniqueWordCounter/src/srv/Counter.cs
 /UniqueWordCounter/src/srv/TextHandler.cs
 /UniqueWordCounter/src/view/IContent.cs
+/UniqueWordCounter/Models/Repo/HashWordRep.cs
+/UniqueWordCounter/Models/Repo/WRepManager.cs
+/UniqueWordCounter/Models/Data/InnerData.cs
+/UniqueWordCounter/IO/FileSaver.cs
+/UniqueWordCounter/IO/FileLoader.cs
+/UniqueWordCounter/Control/ProgramCtrl.cs
+/UniqueWordCounter/IO/Format/Fb2.cs
+/UniqueWordCounter/IO/Format/Txt.cs
+/UniqueWordCounter/Service/Adder.cs
+/UniqueWordCounter/Service/Counter.cs
+/UniqueWordCounter/Service/TextHandler.cs
+/UniqueWordCounter/Service/WordCounter.cs
+/UniqueWordCounter/Program.cs
+/UniqueWordCounter/Models/Word.cs
