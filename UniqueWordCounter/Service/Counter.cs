@@ -24,6 +24,7 @@ namespace UniqueWordCounter.Service
 
         private void AppendCount(Word word)
         {
+            // TODO get without manager
             repMng.IncreaseCount(word);
         }
     }
