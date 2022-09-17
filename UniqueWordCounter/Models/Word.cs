@@ -13,7 +13,7 @@
             Count = count;
         }
 
-        public Word(Word word)
+        public Word(Word? word)
         {
             if (word == null)
             {
@@ -39,7 +39,9 @@
 
         public bool Equals(Word? other)
         {
-            return other != null ? Value.Equals(other.Value) : false;
+            if (other == null) return false;
+            Word otherWord = (other as Word)!;
+            return Value.Equals(otherWord.Value);
         }
 
         public override string ToString()
@@ -47,5 +49,6 @@
             return $"{Id} {Value} {Count}";
         }
 
+        public override bool Equals(object? obj) => Equals(obj as Word);
     }
 }

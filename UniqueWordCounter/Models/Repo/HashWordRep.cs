@@ -1,29 +1,26 @@
 ﻿namespace UniqueWordCounter.Models.Repo
 {
-    internal class HashWordRep : IRepository<Word>
+    internal class HashWordRep : IWordRepository
     {
         readonly Dictionary<string, Word> wordsCacheTable;
-        public int Count { get { return wordsCacheTable.Count; } }
 
         public HashWordRep(Dictionary<string, Word> wordsCacheTable)
         {
             this.wordsCacheTable = wordsCacheTable;
         }
-        public HashWordRep(List<Word> wordsTable)
+
+        public HashWordRep() : this(new())
         {
-            wordsCacheTable = wordsTable.Distinct().ToDictionary(i => i.Value, i => i); ;
         }
 
-        public HashWordRep() : this(new Dictionary<string, Word>())
-        {
-        }
+        public int Count { get { return wordsCacheTable.Count; } }
 
         public void Create(Word word, out Word newWord)
         {
             if (!string.IsNullOrEmpty(word.Value) && !wordsCacheTable.ContainsKey(word.Value))
             {
-                wordsCacheTable.Add(word.Value, word);                
-                
+                wordsCacheTable.Add(word.Value, word);
+
                 // We create new word in input method
                 newWord = word;
             }
