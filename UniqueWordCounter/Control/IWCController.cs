@@ -2,10 +2,9 @@
 {
     internal interface IWCController
     {
-        public void Calc();
-        public string GetInputString();
+        public bool Calc();
+        public bool LoadFile(string path);
+        public bool SaveResult(string path);
         public bool Quit();
-        public void SaveResultAs(string path);
-        public void LoadFile(string path);
     }
 }

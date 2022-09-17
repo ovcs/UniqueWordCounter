@@ -5,7 +5,6 @@
         public Word CreateAndGetWord(string value);
         public Word GetWordBy(string str);
         public void IncreaseCount(Word word);
-
-        public List<string> Import(string orderBy);
+        public List<string> Query(string orderBy);
     }
 }

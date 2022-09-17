@@ -2,6 +2,6 @@
 {
     internal interface ISaver
     {
-        public void Save(string filename, ISerializator format);
+        public void Save(string directory, string filename, ISerializator format);
     }
 }

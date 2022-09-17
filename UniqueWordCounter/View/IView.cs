@@ -2,7 +2,7 @@
 {
     internal interface IView
     {
-        public void Report(int rcode);
-        public void ShowMessage(string cscode);
+        public void Report(string error);
+        public void Message(string text);
     }
 }

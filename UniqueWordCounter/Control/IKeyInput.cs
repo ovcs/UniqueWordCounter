@@ -2,6 +2,6 @@
 {
     internal interface IKeyInput
     {
-        public string GetFilePath();
+        public bool GetInputString(out string input);
     }
 }
