@@ -1,8 +1,8 @@
 ﻿namespace UniqueWordCounter.Models.Repo
 {
-    internal class HashWordRep : IWordRepository
+    internal class HashWordRep : IRepository<Word>
     {
-        Dictionary<string, Word> wordsCacheTable;
+        readonly Dictionary<string, Word> wordsCacheTable;
         public int Count { get { return wordsCacheTable.Count; } }
 
         public HashWordRep(Dictionary<string, Word> wordsCacheTable)
@@ -18,16 +18,18 @@
         {
         }
 
-        public void Create(int id, string value, int count, out Word word)
+        public void Create(Word word, out Word newWord)
         {
-            if (!string.IsNullOrEmpty(value) && !wordsCacheTable.ContainsKey(value))
+            if (!string.IsNullOrEmpty(word.Value) && !wordsCacheTable.ContainsKey(word.Value))
             {
-                word = new Word(id, value, count);
-                wordsCacheTable.Add(value, word);
+                wordsCacheTable.Add(word.Value, word);                
+                
+                // We create new word in input method
+                newWord = word;
             }
             else
             {
-                word = new();
+                newWord = new();
             }
         }
 
@@ -36,6 +38,7 @@
             if (word != null && wordsCacheTable.ContainsKey(word.Value))
                 wordsCacheTable.Remove(word.Value);
         }
+
         public List<Word> GetAll()
         {
             return new(wordsCacheTable.Values);
@@ -55,13 +58,13 @@
             }
         }
 
-        public void Update(Word word, string value)
+        public void Update(Word word, Word updatedWord)
         {
-            if (word != null
-                && String.IsNullOrEmpty(value)
-                && wordsCacheTable.ContainsKey(value))
+            if ((word != null && updatedWord != null)
+                && wordsCacheTable.ContainsKey(word.Value)
+                && !word.Equals(updatedWord))
             {
-                wordsCacheTable[value] = word!;
+                wordsCacheTable[word.Value] = new(updatedWord);
             }
         }
     }
