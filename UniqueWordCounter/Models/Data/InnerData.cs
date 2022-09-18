@@ -21,9 +21,14 @@
             {
                 strBuffer = (List<string>) obj;
             }
+            else if (obj.GetType() == typeof(string))
+            {
+                List<string> strings = new() { (string)obj };
+                strBuffer = strings;
+            }
             else
             {
-                throw new InvalidCastException(obj.ToString());
+                throw new InvalidCastException($"Invalid Load objects {nameof(obj)}");
             }
         }
     }
