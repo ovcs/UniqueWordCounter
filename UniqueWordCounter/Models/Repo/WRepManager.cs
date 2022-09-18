@@ -48,7 +48,7 @@
             {
                 "desc value count" => wr.GetAll()
                                         .OrderByDescending(e => e.Count)
-                                        .Select(e => String.Format("{0} {1}", e.Value, e.Count))
+                                        .Select(e => String.Format("{0,30} {1}", e.Value, e.Count))
                                         .ToList(),
                 _ => wr.GetAll().Select(e => e.ToString()).ToList(),
             };
