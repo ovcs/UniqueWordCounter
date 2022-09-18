@@ -8,8 +8,6 @@ using UniqueWordCounter.Models.Repo;
 using UniqueWordCounter.Service;
 using UniqueWordCounter.View;
 
-string loadPath = @"D:\TestEnvironment\bunin_i_a-text_2262.fb2";
-string savePath = @"D:\TestEnvironment\test.txt";
 
 // Create serializations class
 Dictionary<string, IDeserializator> listInputFormats = new();
@@ -124,83 +122,5 @@ while (run)
         openKeys = false;
     }
 }
+
 view.Message(ViewMessage.BYE);
-
-
-/*while (run)
-{
-    view.Message(ViewMessage.INTRO);
-    var key = Console.ReadKey().Key;
-    if (key == ConsoleKey.D1)
-    {
-        string path;
-        do
-        {
-            do
-            {
-                view.Message(ViewMessage.LOAD_FILE);
-            }
-            while (!pc.GetInputString(out path));
-        }
-        while (!pc.LoadFile(path));
-
-        do
-        {
-            view.Message(ViewMessage.START_WC);
-        }
-        while (!pc.Calc());
-
-        view.Message(ViewMessage.TO_DO);
-
-        key = Console.ReadKey().Key;
-
-        if (key == ConsoleKey.D1)
-        {
-            view.Message(repManager.MostCommon().ToString());
-        }
-
-        if (key == ConsoleKey.D2)
-        {
-            do
-            {
-                do
-                {
-                    view.Message(ViewMessage.SAVE_FILE);
-                }
-                while (!pc.GetInputString(out path));
-            }
-            while (!pc.SaveResult(path));
-        }
-
-        view.Message(ViewMessage.REPEAT);
-
-        key = Console.ReadKey().Key;
-
-        if (key == ConsoleKey.D2)
-        {
-            run = false;
-        }
-    }
-    view.Message(ViewMessage.BYE);
-}*/
-/*pc.LoadFile(loadPath);
-pc.Calc();
-pc.SaveResult(savePath);
-*/
-
-//@"D:\TestEnvironment\bunin_i_a-text_2262.fb2"
-//innerData.Texts.Select(e => e).ToList().ForEach(e => Console.WriteLine(e));
-
-// repManager.Import("desc", innerData)
-// innerData.QWords.Select(e => { Console.WriteLine(e.Value); return true; });
-// Console.WriteLine(wordRep.Length);
-
-/*
- * Repository
- * Service
- * Logger
- * View
- * Controller
- * Data
- * 
-*/
