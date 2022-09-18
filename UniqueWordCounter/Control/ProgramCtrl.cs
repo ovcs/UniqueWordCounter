@@ -43,8 +43,10 @@ namespace UniqueWordCounter.Control
         public bool GetInputString(out string input)
         {
             input = Console.ReadLine()!;
-
-            return !string.IsNullOrEmpty(input);
+            bool check = !string.IsNullOrEmpty(input);
+            if (check)
+                input = input.Trim(new char[] { '*', ' ', '\'', '"' });
+            return check;
         }
 
         public bool LoadFile(string path)
